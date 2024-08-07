@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Frotas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Controle de Frotas</h1>
+
+    <div id="veiculos">
+        <!-- Os veículos serão inseridos aqui pelo JavaScript -->
+    </div>
+
+    <script>
+        // Exemplo de como os dados podem ser inseridos no HTML usando JavaScript
+
+        // Simulando os dados dos veículos
+        const veiculos = [
+            { tipo: 'Carro', tempoMedio: 2, combustivelGasto: 50, quilometragemRodada: 300, emManutencao: true, modelo: 'Sedan' },
+            { tipo: 'Caminhão', tempoMedio: 8, combustivelGasto: 150, quilometragemRodada: 1200, emManutencao: false, carga: 20 },
+            { tipo: 'Ônibus', tempoMedio: 5, combustivelGasto: 100, quilometragemRodada: 600, emManutencao: true, capacidade: 50 },
+            { tipo: 'Carro', tempoMedio: 3, combustivelGasto: 40, quilometragemRodada: 200, emManutencao: false, modelo: 'SUV' }
+        ];
+
+        const veiculosContainer = document.getElementById('veiculos');
+
+        // Função para exibir os dados dos veículos no HTML
+        function exibirVeiculos() {
+            veiculos.forEach(veiculo => {
+                const veiculoDiv = document.createElement('div');
+                veiculoDiv.className = 'veiculo';
+
+                veiculoDiv.innerHTML = `
+                    <h2>${veiculo.tipo}</h2>
+                    <span>Tempo Médio de Trânsito: ${veiculo.tempoMedio} horas</span>
+                    <span>Combustível Gasto: ${veiculo.combustivelGasto} litros</span>
+                    <span>Quilometragem Rodada: ${veiculo.quilometragemRodada} km</span>
+                    <span>${veiculo.tipo === 'Carro' ? 'Modelo' : veiculo.tipo === 'Caminhão' ? 'Carga' : 'Capacidade'}: ${veiculo.tipo === 'Carro' ? veiculo.modelo : veiculo.tipo === 'Caminhão' ? veiculo.carga + ' toneladas' : veiculo.capacidade + ' pessoas'}</span>
+                    <span>Em Manutenção: ${veiculo.emManutencao ? 'Sim' : 'Não'}</span>
+                `;
+
+                veiculosContainer.appendChild(veiculoDiv);
+            });
+        }
+
+        // Chamar a função para exibir os veículos
+        exibirVeiculos();
+    </script>
+</body>
+</html>

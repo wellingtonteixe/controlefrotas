@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #44657a;
+    margin: 0;
+    padding: 20px
+}
+
+h1 {
+    text-align: center;
+    color: #fdfbfb;
+}
+
+#veiculos {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 20px; /* Espaçamento entre os veículos */
+}
+
+.veiculo {
+    display: flex;
+    align-items: center;
+    background-color: hsl(0, 0%, 88%);
+    border: 4px solid #506b55; /* Borda ao redor de cada veículo */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(250, 255, 255, 0.1);
+    position: center;
+}
+
+.veiculo-imagem {
+    width: 200px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.veiculo-detalhes {
+    flex-grow: 1;
+}
+
+.veiculo h2 {
+    margin-top: 0;
+    border-bottom: 1px solid #e9a1a1; /* Linha abaixo do título */
+    padding-bottom: 10px;
+}
+
+.veiculo span {
+    display: block;
+    margin: 40px 0;
+    padding: 10px;
+    border-bottom: 1px solid #eca5a5; /* Linha entre as informações */
+}
+
+.veiculo span:last-child {
+    border-bottom: none; /* Remove a linha na última informação */
+}
+
